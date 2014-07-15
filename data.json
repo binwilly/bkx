@@ -1,0 +1,61 @@
+{
+  "label": "",
+  "amount": 377,
+  "children": [
+    {
+        "label": "",
+        "amount": 1,
+        "color": "#ff4"
+    },
+    {
+        "label": "",
+        "amount": 2
+    },
+    {
+        "label": "",
+        "amount": 3
+    },
+    {
+        "label": "",
+        "amount": 5
+    },
+    {
+        "label": "",
+        "amount": 8
+    },
+    {
+        "label": "",
+        "amount": 13
+    },
+    {
+        "label": "",
+        "amount": 21
+    },
+    {
+        "label": "",
+        "amount": 34
+    },
+    {
+        "label": "",
+        "amount": 55
+    },
+    {
+        "label": "",
+        "amount": 89
+    },
+    {
+        "label": "aaaa",
+        "amount": 144,
+        "stroke": "#ff1e1e"
+    },
+    {
+        "id": "bike-shop",
+        "label": "",
+        "amount": 233,
+        "icon": "home.svg",
+        "color": "#33ff33",
+        "stroke": "#33ff33",
+        "alpha": 0.7
+    }
+  ]
+}
