@@ -22,6 +22,7 @@ Thumbs.db
 .tmproj
 nbproject
 nbactions.xml
+sftp-config.json
 *.sublime-project
 *.sublime-workspace
 

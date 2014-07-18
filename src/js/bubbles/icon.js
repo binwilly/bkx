@@ -70,9 +70,9 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 	me.show = function() {
 		var me = this, i, cx = me.pos.x, icon, cy = me.pos.y, r = Math.max(5, me.bubbleRad * me.bc.bubbleScale);
 		
-
+		console.log(me);
 		me.circle = me.paper.circle(cx, cy, r)
-			.attr({ stroke: me.color, 'stroke-width': '3px', fill: me.color });
+			.attr({ stroke: me.color, 'stroke-width': me.bubbleRad*0.07+'px', fill: me.color });
 
 		me.dashedBorder = me.paper.circle(cx, cy, Math.min(r-3, r*0.95))
 			.attr({ stroke: false });
@@ -110,7 +110,7 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 		
 		if (me.hasIcon) {
 			if (!me.iconLoaded) me.loadIcon();
-			else me.displayIcon();
+			else me.displayIcon(me.color);
 		} else {
 			me.addOverlay();
 		}
@@ -141,18 +141,24 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 			}
 		}
 		me.iconLoaded = true;
-		me.displayIcon();
+		me.displayIcon(me.color);
 	};
 	
 	/*
 	 * will display the icon, create the svg path element, etc
 	 */
-	me.displayIcon = function() {
+	me.displayIcon = function(fillColor) {
 		var me = this, i, path;
 		me.iconPaths = [];
-		
+		if (fillColor){ // if it is a circle's icon
+			// let's put them all white
+			iconColor = '#fff';
+		}else{
+			// it is the logo
+			iconColor = '#d12443';
+		}
 		path = me.paper.path(me.iconPathData);
-		path.attr({fill: "#fff", stroke: "none"}).translate(-50, -50);
+		path.attr({fill: iconColor, stroke: "none"}).translate(-50, -50);
 		me.iconPaths.push(path);
 		//me.mgroup.addMember(path.node);
 		

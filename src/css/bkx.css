@@ -4,6 +4,7 @@ body {
   background-origin: content-box;
   -webkit-animation: estrellas linear 45s infinite alternate;
   animation: estrellas linear 45s infinite alternate;
+  height: 100%;
 }
 
 @-webkit-keyframes estrellas{
@@ -40,13 +41,46 @@ body {
   float: left;
   font-family: futura, sans-serif;
   color: rgba(255, 255, 255, 0.8);
+  padding: 10% 0;
 }
 
-.datasets-wrapper .name {
-  font-size: 45px;
-  white-space: nowrap;
+.datasets-wrapper h3.name {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin: 10px 0 0 0;
 }
-
+.yellow{
+  color: #fefe7e;
+}
+a.red{
+  color: #d13446;
+}
+a.red:hover{
+  background-color: rgba(209, 52, 70, 0.4);
+}
+a.red.selected{
+  background-color: #ff4157;
+  border-color: #ff4157;
+  color: #000;
+  cursor: default;
+}
+a.cyan{
+  color: #00fffe;
+}
+a.cyan:hover{
+  background-color: rgba(0, 255, 254, 0.4);
+}
+a.red, a.cyan{
+  text-decoration: none;
+  border: 1px solid;
+  padding: 1px 5px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.datasets-wrapper h4{
+  margin: 6px 0;
+  font-size: 21px;
+}
 .dataset .data-content {
   display: none;
 }
@@ -80,6 +114,9 @@ body {
 @media screen and (max-width: 960px) {
   .bubble-content { 
     width: 80%;
+  }
+  .datasets-wrapper{
+    width: 100%;
   }
 
 }
