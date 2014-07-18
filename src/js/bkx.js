@@ -59,10 +59,6 @@ var BKX = {
       return;
     }
 
-    /**
-     * TODO 
-     */
-
     var children = {
       'id': element.icon,
       'label': element.namedatasetnameasinthebkplatform,
@@ -72,6 +68,11 @@ var BKX = {
       'dataset': element
     };
     
+    // Aways set the bigger amount for the main bubble.
+    if ( datasets.amount < element.icon) {
+      datasets.amount = parseInt(element.icon) * 2;
+    }
+
     datasets.children.push(children);
   },
 
