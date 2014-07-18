@@ -5,7 +5,7 @@ var fibonacci = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
 var datasets = {
       'label': '',
       'amount': 144,
-      'icon': 'images/bike.svg'
+      'icon': 'images/bike-logo.svg'
     };
     datasets.children = [];
 
@@ -18,7 +18,6 @@ var bubbleColors = {
 var BKX = {
 
   init: function () {
-    //this.loadData();
     this.loadSpreadsheet();
     this.bind();
   },
@@ -34,15 +33,6 @@ var BKX = {
 
     $(window).bind('hashchange', function () {
       BKX.changeDataset();
-    });
-  },
-
-  loadData: function () {
-    
-    $.getJSON("./data.json", function (data) {
-      BKX.bubbles(data);
-    }).fail(function() {
-      console.log( "error" );
     });
   },
   
@@ -91,8 +81,12 @@ var BKX = {
      * we should get a fancy way to check that.
      */
     var hash = window.location.hash,
-        name = hash.split('/')[3],
-        name = name.replace(/-/g,'');
+        name = hash.split('/')[3];
+
+    // First load with no hash
+    if (name) {
+      name = name.replace(/-/g,'');
+    }
 
     BKX.appendDataset(name);
   },
@@ -125,6 +119,10 @@ var BKX = {
   findDataset: function (name) {
     var dataset = '',
         dataLabel = '';
+
+    if (!name) {
+      return datasets.children[0];
+    }
     datasets.children.forEach( function (element) {
       // Remove line break and spaces
       dataLabel = element.label.replace(/(\r\n|\n|\r|\ )/gm,"");
