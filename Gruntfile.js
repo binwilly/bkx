@@ -3,10 +3,10 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
+      js: {
+        options: {
+          separator: ';',
+        },
         src: [
           'src/js/bubbletree.js',
           'src/js/layout.js',
@@ -23,11 +23,20 @@ module.exports = function(grunt) {
         ],
         dest: 'build/bubbletree.js',
       },
+      css: {
+        src: [
+          'src/css/bubbletree.css',
+          'src/css/page.css',
+          'src/css/tooltip.css',
+          'src/css/bkx.css',
+        ],
+        dest: 'build/bubbletree.css',
+      }
     },
     watch: {
       scripts: {
-        files: ['src/js/*.js','src/js/bubbles/*.js'],
-        tasks: ['concat'],
+        files: ['src/js/*.js','src/js/bubbles/*.js','src/css/*.css'],
+        tasks: ['concat:js', 'concat:css'],
         options: {
           spawn: false,
           livereload: true

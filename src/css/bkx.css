@@ -1,0 +1,55 @@
+.content {
+  text-align: center;
+  height: 100%;  
+  background-image: url('../images/bg.png');
+}
+
+.bubble-content { 
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+
+.datasets-wrapper {
+  width: 400px;
+  height: 400px;
+  float: left;
+  font-family: futura;
+  color: #FFF;
+  opacity: 0.8;
+  text-align: left;
+}
+
+.datasets-wrapper .name {
+  font-size: 45px;
+  white-space: nowrap;
+}
+
+.dataset .data-content {
+  display: none;
+}
+
+.dataset .col-name {
+  font-size: 23px;
+  white-space: nowrap;
+}
+
+.dataset .col-value {
+  font-size: 12px;
+  opacity: 0.6;
+  height: 200px;
+}
+
+.arrows {
+  text-align: left;
+}
+
+.arrows img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.arrow-prev,
+.arrow-next {
+  display: inline-block;
+}

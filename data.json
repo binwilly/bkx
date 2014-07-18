@@ -1,61 +1,72 @@
 {
   "label": "",
   "amount": 377,
+  "icon": "images/car.svg",
   "children": [
     {
         "label": "",
         "amount": 1,
-        "color": "#ff4"
+        "color": "#33FF33"
     },
     {
         "label": "",
-        "amount": 2
+        "amount": 2,
+        "color": "#FF4455"
     },
     {
         "label": "",
-        "amount": 3
+        "amount": 3,
+        "color": "#33FF33"
     },
     {
         "label": "",
-        "amount": 5
+        "amount": 5,
+        "color": "#FF4455"
+    },
+    {
+        "label": "cycletracks",
+        "amount": 8,
+        "icon": "images/car.svg",
+        "color": "#33FFFF"
     },
     {
         "label": "",
-        "amount": 8
+        "amount": 13,
+        "color": "#33FF33"
     },
     {
         "label": "",
-        "amount": 13
+        "amount": 21,
+        "color": "#FF4455"
     },
     {
         "label": "",
-        "amount": 21
+        "amount": 34,
+        "color": "#33FF33"
     },
     {
         "label": "",
-        "amount": 34
+        "amount": 55,
+        "icon": "images/car.svg",
+        "color": "#33FFFF"
     },
     {
         "label": "",
-        "amount": 55
+        "amount": 89,
+        "icon": "images/car.svg",
+        "color": "#FF4455"
     },
     {
         "label": "",
-        "amount": 89
-    },
-    {
-        "label": "aaaa",
         "amount": 144,
-        "stroke": "#ff1e1e"
+        "icon": "images/car.svg",
+        "color": "#FF4455"
     },
     {
-        "id": "bike-shop",
-        "label": "",
+        "label": "free wifi spots",
         "amount": 233,
-        "icon": "home.svg",
-        "color": "#33ff33",
-        "stroke": "#33ff33",
-        "alpha": 0.7
+        "icon": "images/coal.svg",
+        "color": "#33FF33"
     }
   ]
 }

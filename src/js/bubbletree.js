@@ -334,7 +334,8 @@ var BubbleTree = function(config, onHover, onUnHover) {
 			});
 		}
 
-		var rootBubble = me.createBubble(rt, me.origin, 0, 0, rt.color);
+		// Last param was removed, me.color for root bubble.
+		var rootBubble = me.createBubble(rt, me.origin, 0, 0);
 		me.traverseBubbles(rootBubble);
 	};
 
@@ -371,7 +372,7 @@ var BubbleTree = function(config, onHover, onUnHover) {
 
 		if (children.length > 0) {
 			// create ring
-			ring = me.createRing(parentBubble.node, parentBubble.pos, 0, { stroke: '#888', 'stroke-dasharray': "-" });
+			ring = me.createRing(parentBubble.node, parentBubble.pos, 0, { stroke: '#FFF', 'stroke-dasharray': "-", "stroke-opacity": .5});
 		}
 
 		$.each(children, function(i,c) {
@@ -602,8 +603,9 @@ var BubbleTree = function(config, onHover, onUnHover) {
 					//else t.$(obj).rad =
 					t.hide(obj); // remove from stage afterwards
 				} else if (!obj.hideFlag) {
+					// @TODO make alpha as an option param.
 					// bubble is not on stage but should
-					t.$(obj).alpha = 1;
+					t.$(obj).alpha = 0.4;
 					if (!obj.visible) {
 						obj.alpha = 0;
 						t.show(obj);

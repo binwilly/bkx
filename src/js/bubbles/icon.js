@@ -72,16 +72,16 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 		
 
 		me.circle = me.paper.circle(cx, cy, r)
-			.attr({ stroke: false, fill: me.color });
+			.attr({ stroke: me.color, 'stroke-width': '3px', fill: me.color });
 
 		me.dashedBorder = me.paper.circle(cx, cy, Math.min(r-3, r*0.95))
-			.attr({ stroke: '#ffffff', 'stroke-dasharray': "- " });
+			.attr({ stroke: false });
 		
 		if ($.isFunction(me.bc.config.initTooltip)) {
 			me.bc.config.initTooltip(me.node, me.circle.node);
 		}
 	
-		me.label = $('<div class="label '+me.node.id+'"><div class="amount">'+utils.formatNumber(me.node.amount)+'</div><div class="desc">'+me.node.shortLabel+'</div></div>');
+		me.label = $('<div class="label '+me.node.id+'"><div class="amount"></div><div class="desc">'+me.node.shortLabel+'</div></div>');
 		me.bc.$container.append(me.label);
 		
 		if ($.isFunction(me.bc.config.initTooltip)) {
@@ -233,6 +233,9 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 		
 
 		//me.label.attr({ x: me.pos.x, y: me.pos.y, 'font-size': Math.max(4, me.bubbleRad * me.bc.bubbleScale * 0.25) });
+		
+		// TODO add param to set icon always outside
+		/*
 		if (!showLabel) {
 			me.label.hide();
 			me.label2.show();
@@ -246,6 +249,15 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 				me.label.find('.desc').show();
 				me.label2.hide();
 			}
+		}
+		*/
+
+		me.label.hide();
+		me.label2.show();
+
+		if (me.dashedBorder.id == 1 ) {
+			me.label.show();
+			me.label2.hide();
 		}
 		
 		ly = showIcon ? y+r*0.77-me.label.height() : y-me.label.height()*0.5; 
@@ -273,7 +285,8 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 						
 					}
 					path.node.setAttribute("transform", transform);
-					path.attr({ 'fill-opacity': me.alpha });
+					// TODO add param to change opacity only for the icon.
+					path.attr({ 'fill-opacity': 0.9 });
 					
 				}
 			} else {

@@ -23,7 +23,7 @@ BubbleTree.Ring = function(node, bc, o, rad, attr) {
 	me.draw = function() {
 		var me = this, o = me.origin;
 		if (!me.visible) return;
-		me.circle.attr({ cx: o.x, cy: o.y, r: me.rad, 'stroke-opacity': me.alpha });
+		me.circle.attr({ cx: o.x, cy: o.y, r: me.rad, 'stroke-opacity': 0.5 });
 	};
 	
 	/*
