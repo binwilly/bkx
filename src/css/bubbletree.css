@@ -1,7 +1,15 @@
 .bubbletree-wrapper { 
-  width: 500px;
+  width: 40%;
   height: 500px;
   position: absolute; 
+}
+
+
+@media screen and (max-width: 960px) {
+  .bubbletree-wrapper { 
+    width: 80%;
+  }
+
 }
 
 .bubbletree { 

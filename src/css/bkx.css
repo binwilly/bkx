@@ -1,23 +1,45 @@
-.content {
-  text-align: center;
-  height: 100%;  
+body {
   background-image: url('../images/bg.png');
+  background-size: 100%;
+  background-origin: content-box;
+  -webkit-animation: estrellas linear 45s infinite alternate;
+  animation: estrellas linear 45s infinite alternate;
+}
+
+@-webkit-keyframes estrellas{
+  from{
+  background-size: 80%;
+  }
+  to{
+  background-size: 200%;
+  }
+}
+@keyframes estrellas{
+  from{
+  background-size: 80%;
+  }
+  to{
+  background-size: 200%;
+  }
+}
+
+.content{
+  width: 80%;
+  margin: 0 auto;
 }
 
 .bubble-content { 
-  width: 500px;
+  width: 60%  ;
   height: 500px;
   float: left;
 }
 
 .datasets-wrapper {
-  width: 400px;
+  width: 40%;
   height: 400px;
   float: left;
-  font-family: futura;
-  color: #FFF;
-  opacity: 0.8;
-  text-align: left;
+  font-family: futura, sans-serif;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .datasets-wrapper .name {
@@ -52,4 +74,12 @@
 .arrow-prev,
 .arrow-next {
   display: inline-block;
+}
+
+
+@media screen and (max-width: 960px) {
+  .bubble-content { 
+    width: 80%;
+  }
+
 }
